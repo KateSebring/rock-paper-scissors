@@ -13,7 +13,7 @@ function getComputerChoice() {
     let computerChoice = generateNum();
 
     if (computerChoice === 0) {
-        let computerChoice = "rock";
+        computerChoice = "rock";
     } else if (computerChoice === 1) {
         computerChoice = "paper";
     } else {
