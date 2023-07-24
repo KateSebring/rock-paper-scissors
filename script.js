@@ -27,10 +27,15 @@ function playRound(computerChoice, playerChoice) {
     } else if ((computerChoice === "rock" && playerChoice === "scissors")
     || (computerChoice === "scissors" && playerChoice === "paper")
     || (computerChoice === "paper" && playerChoice === "rock")) {
-        winnerOfRound = `Computer wins! ${computerChoice} beats ${playerChoice}.`;
+        winnerOfRound = `Computer wins because ${computerChoice} beats ${playerChoice}.`;
+    } else {
+        winnerOfRound = `Player wins because ${playerChoice} beats ${computerChoice}.`;
     }
+    return winnerOfRound;
 }
 
-
-console.log(getComputerChoice());
-console.log(getPlayerChoice());
+let computerChoice = getComputerChoice();
+let playerChoice = getPlayerChoice();
+console.log(computerChoice);
+console.log(playerChoice);
+console.log(playRound(computerChoice, playerChoice));
