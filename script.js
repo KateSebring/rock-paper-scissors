@@ -1,10 +1,12 @@
-function getComputerChoice() {
-    let computerChoice;
+function generateNum() {
+    return getNum = Math.floor(Math.random() * 3);
+}
 
-    let getNum = Math.floor(Math.random() * 3);
-    if (getNum === 0) {
+function getComputerChoice() {
+    let computerChoice = generateNum();
+    if (computerChoice === 0) {
         computerChoice = "rock";
-    } else if (getNum === 1) {
+    } else if (computerChoice === 1) {
         computerChoice = "paper";
     } else {
         computerChoice = "scissors";
@@ -34,6 +36,15 @@ function playRound(computerChoice, playerChoice) {
     return winnerOfRound;
 }
 
-let computerChoice = getComputerChoice();
-let playerChoice = getPlayerChoice();
-console.log(playRound(computerChoice, playerChoice));
+function game() {
+    let computerChoice;
+    let playerChoice;
+    
+    for (i = 0; i < 5; i++) {
+        computerChoice = getComputerChoice();
+        playerChoice = getPlayerChoice();
+        console.log(playRound(computerChoice, playerChoice));
+    }
+}
+
+game();
