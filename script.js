@@ -24,6 +24,10 @@ function playRound(computerChoice, playerChoice) {
     || (computerChoice === "paper" && playerChoice === "paper") 
     || (computerChoice === "scissors" && playerChoice === "scissors")) {
         winnerOfRound = "It's a tie! No winner.";
+    } else if ((computerChoice === "rock" && playerChoice === "scissors")
+    || (computerChoice === "scissors" && playerChoice === "paper")
+    || (computerChoice === "paper" && playerChoice === "rock")) {
+        winnerOfRound = `Computer wins! ${computerChoice} beats ${playerChoice}.`;
     }
 }
 
