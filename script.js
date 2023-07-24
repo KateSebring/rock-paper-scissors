@@ -20,22 +20,20 @@ function getPlayerChoice() {
 
 function playRound(computerChoice, playerChoice) {
     let winnerOfRound;
-    if ((computerChoice === "rock" && playerChoice === "rock") 
-    || (computerChoice === "paper" && playerChoice === "paper") 
-    || (computerChoice === "scissors" && playerChoice === "scissors")) {
-        winnerOfRound = "It's a tie! No winner.";
+    if ((computerChoice === "scissors" && playerChoice === "rock")
+    || (computerChoice === "paper" && playerChoice === "scissors")
+    || (computerChoice === "rock" && playerChoice === "paper")) {
+        winnerOfRound = `You win! ${playerChoice} beats ${computerChoice}.`;
     } else if ((computerChoice === "rock" && playerChoice === "scissors")
     || (computerChoice === "scissors" && playerChoice === "paper")
     || (computerChoice === "paper" && playerChoice === "rock")) {
-        winnerOfRound = `Computer wins because ${computerChoice} beats ${playerChoice}.`;
+        winnerOfRound = `You lose! ${computerChoice} beats ${playerChoice}.`;
     } else {
-        winnerOfRound = `Player wins because ${playerChoice} beats ${computerChoice}.`;
+        winnerOfRound = "It's a tie! No winner.";
     }
     return winnerOfRound;
 }
 
 let computerChoice = getComputerChoice();
 let playerChoice = getPlayerChoice();
-console.log(computerChoice);
-console.log(playerChoice);
 console.log(playRound(computerChoice, playerChoice));
